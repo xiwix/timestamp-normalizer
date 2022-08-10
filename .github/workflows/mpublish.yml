@@ -22,6 +22,6 @@ jobs:
       - name: Dump Target
         run: ls -al target
       - name: Publish package
-        run: ./mvnw --batch-mode deploy
+        run: ./mvnw -B -DskipTests --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
