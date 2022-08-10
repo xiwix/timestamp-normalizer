@@ -4,10 +4,20 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.litesoft</groupId>
 	<artifactId>utilTimeStampISO8601zNormalizer</artifactId>
-	<packaging>jar</packaging>
 	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
 	<name>utilTimeStampISO8601zNormalizer</name>
 	<description>Utility classes to take a ISO-8601 like timestamp and make a ISO-8601 conforming version</description>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Litesoft Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/litesoft-java/utilTimeStampISO8601zNormalizer</url>
+		</repository>
+	</distributionManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
