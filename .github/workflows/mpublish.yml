@@ -2,9 +2,9 @@ name: mPublish -- No tests
 
 on:
   workflow_dispatch
+
 jobs:
   publish:
-    needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
