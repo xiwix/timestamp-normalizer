@@ -20,7 +20,7 @@ jobs:
           java-version: '17'
       - name: Set release_tag env variable
         run: |
-          echo "release_tag=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+          echo "release_tag=v$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
       - name: Validate Project Version
         if: ${{ inputs.projectVersion != env.release_tag }}
         uses: actions/github-script@v3
