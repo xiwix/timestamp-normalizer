@@ -3,18 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.litesoft</groupId>
-	<artifactId>utilTimeStampISO8601zNormalizer</artifactId>
-	<version>1.0.3</version>
+	<artifactId>iso8601znormalizer</artifactId>
+	<version>1.0.4</version>
 	<packaging>jar</packaging>
 
 	<name>utilTimeStampISO8601zNormalizer</name>
-	<description>Utility classes to take a ISO-8601 like timestamp and make a ISO-8601 conforming version</description>
+	<description>Utility classes to take an ISO-8601 like timestamp and make an ISO-8601 conforming version</description>
 
 	<distributionManagement>
 		<repository>
 			<id>github</id>
 			<name>GitHub Litesoft Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/litesoft/utilTimeStampISO8601zNormalizer</url>
+			<url>https://maven.pkg.github.com/litesoft/iso8601znormalizer</url>
 		</repository>
 	</distributionManagement>
 
@@ -35,7 +35,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>utilTimeStampISO8601zNormalizer</finalName>
+		<finalName>iso8601znormalizer</finalName>
 		<plugins>
 
 			<plugin>
