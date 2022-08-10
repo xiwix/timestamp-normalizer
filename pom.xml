@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.litesoft</groupId>
 	<artifactId>iso8601znormalizer</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
 
 	<name>utilTimeStampISO8601zNormalizer</name>
@@ -14,7 +14,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Litesoft Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/litesoft/iso8601znormalizer</url>
+			<url>https://maven.pkg.github.com/litesoft-java/iso8601znormalizer</url>
 		</repository>
 	</distributionManagement>
 
