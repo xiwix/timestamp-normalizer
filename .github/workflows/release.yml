@@ -1,0 +1,42 @@
+name: Java CI -- No tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      projectVersion:
+        description: 'project version in POM'
+        required: true
+        type: string
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up OpenJDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # OpenJDK via Eclipse Temurin
+          java-version: '17'
+      - name: Set release_tag env variable
+        run: |
+          echo "release_tag=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+      - name: Validate Project Version
+        if: ${{ inputs.projectVersion != env.release_tag }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Input Project Version ${{ inputs.projectVersion }} != ${{ env.release_tag }} (from POM)')
+      - name: Build with Maven
+        run: ./mvnw -B -DskipTests package
+      - name: Dump Target
+        run: ls -al target
+      - name: Upload JAR to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/utilTimeStampISO8601zNormalizer.jar
+          asset_name: utilTimeStampISO8601zNormalizer.jar
+          tag: "${{ env.release_tag }}"
+          overwrite: true
+          body: "${{ github.event.head_commit.message }}"
