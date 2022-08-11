@@ -14,7 +14,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Litesoft Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/litesoft-java/iso8601znormalizer</url>
+			<url>https://maven.pkg.github.com/xiwix/timestamp-normalizer</url>
 		</repository>
 	</distributionManagement>
 
